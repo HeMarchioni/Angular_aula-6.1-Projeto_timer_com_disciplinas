@@ -1,0 +1,28 @@
+<div class="panel panel-primary">
+<div class="panel-heading">
+  <h2>Disciplinas</h2>
+</div>
+
+<label for="name">Nome</label>
+<div class="form-group row">
+  <input #name type="text" class="form-control mx-3 mb-1" id="name" required  name="name" placeholder="Nova Disciplina">
+  <button class="btn btn-success ml-3" (click)="discService.add(name.value)" >Adicionar</button>
+</div>
+
+<div class="panel-body">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Nome</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let dsplna of discService.getList(),index as i">
+      <td>{{dsplna.name}}</td>
+      <td><button (click)="discService.delete(i)" class="btn btn-danger">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</div>

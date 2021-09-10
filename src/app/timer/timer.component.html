@@ -1,0 +1,12 @@
+<h5 class="text-center mt-2">Temporizador</h5>
+    <div class="container-xs text-center my-3">
+      <span class="mr-3">{{timer.getCount()}}</span>
+      <button class="btn btn-info mr-2" (click)="timer.start()">Start</button>
+      <button class="btn btn-info mr-2" (click)="timer.stop()">Stop</button>
+      <button class="btn btn-info mr-2" (click)="timer.reset()">Reset</button>
+      <div class="inp">
+        <input type="number" class="form-control mr-2" name="intervalo" [(ngModel)]="timer.seg"  step="0.1" >
+        <button class="btn btn-info " (click)="timer.set()">Set</button>
+      </div>
+      Intervalo por Pulso, a cada {{timer.seg}} Segundos 1 pulso
+    </div>
